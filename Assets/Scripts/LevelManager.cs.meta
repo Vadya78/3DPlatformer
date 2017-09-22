@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b9d525da02e9c934db09fbdead5875f2
+timeCreated: 1503652484
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - PauseMenuUI: {fileID: 1238347721654762, guid: 2be2219d2dfa33a46a31e954e0ed741a,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
