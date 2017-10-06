@@ -5,7 +5,7 @@ using UnityEngine;
 public class Searchlight : MonoBehaviour
 {
     private float t = 0.0f;
-    public float maxT = 0.12f;
+    public float maxT = 0.4f;
     public float minRotAngle = 5;
     public float maxRotAngle = 175;
     public float rotSpeed = 0.1f;
@@ -17,22 +17,17 @@ public class Searchlight : MonoBehaviour
 	
 	void Update ()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, maxRotAngle, 0), t);
-        t += rotSpeed;
-        if(t > maxT)
+        if(Time.timeScale != 0)
         {
-            float temp = maxRotAngle;
-            maxRotAngle = minRotAngle;
-            minRotAngle = temp;
-            t = 0.0f;
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, maxRotAngle, 0), t);
+            t += rotSpeed;
+            if (t > maxT)
+            {
+                float temp = maxRotAngle;
+                maxRotAngle = minRotAngle;
+                minRotAngle = temp;
+                t = 0.0f;
+            }
         }
 	}
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-
-        }
-    }*/
 }

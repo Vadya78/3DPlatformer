@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Assets\Prototype Materials\ShowcaseMovement.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\CatchingCharacter.cs" />
     <Compile Include="Assets\Scripts\CharacterRotation.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\LightSwitcher.cs" />
