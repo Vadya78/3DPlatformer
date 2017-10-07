@@ -11,19 +11,14 @@ public class LevelManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Update ()
-    {
-		
-	}
-
     public void LoadLevel (string levelName)
     {
         SceneManager.LoadScene(levelName);
         //SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    /*void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
 
-    }
+    }*/
 }

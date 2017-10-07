@@ -16,8 +16,12 @@ public class LightSwitcher : MonoBehaviour
     {
         for(;;)
         {
-            lampLight.enabled = !lampLight.enabled;
-            yield return new WaitForSecondsRealtime(3);
+            if (Time.timeScale != 0)
+            {
+                lampLight.enabled = !lampLight.enabled;
+                yield return new WaitForSecondsRealtime(3);
+            }
+            else break;
         }
     }
 

@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void MenuOn()
+    public void MenuOn()
     {
         m_TimeScaleRef = Time.timeScale;
         Time.timeScale = 0f;
