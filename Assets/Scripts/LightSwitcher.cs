@@ -5,25 +5,19 @@ using UnityEngine;
 public class LightSwitcher : MonoBehaviour
 {
     Light lampLight;
+    public float switchingTime = 3f;
 
-	void Start ()
+    void Start ()
     {
         lampLight = GetComponentInChildren<Light>();
-        StartCoroutine(LightSwitching());
+        InvokeRepeating("LightSwitching", 0f, switchingTime);
     }
 
-    IEnumerator LightSwitching()
+    private void LightSwitching()
     {
-        for(;;)
+        if (Time.timeScale != 0)
         {
-            if (Time.timeScale != 0)
-            {
-                lampLight.enabled = !lampLight.enabled;
-                yield return new WaitForSecondsRealtime(3);
-            }
-            else break;
+            lampLight.gameObject.SetActive(!lampLight.gameObject.activeSelf);
         }
     }
-
-
 }
