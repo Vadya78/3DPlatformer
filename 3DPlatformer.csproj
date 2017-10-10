@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\Scripts\MotorAI.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
+    <Compile Include="Assets\Scripts\NavigationAI.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\RaycastForAi.cs" />
     <Compile Include="Assets\Scripts\Searchlight.cs" />
