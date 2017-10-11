@@ -14,7 +14,6 @@ public class NavigationAI : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         countOfTargets = targets.Length;
-        Debug.Log(countOfTargets);
         navMeshAgent.SetDestination(targets[i].position);
 	}
 
@@ -42,7 +41,7 @@ public class NavigationAI : MonoBehaviour
         }
 
 
-		if(Input.GetKeyDown(KeyCode.Mouse0))
+		/*if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -51,6 +50,6 @@ public class NavigationAI : MonoBehaviour
             {
                 navMeshAgent.SetDestination(hit.point);
             }
-        }
+        }*/
 	}
 }

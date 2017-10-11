@@ -5,14 +5,20 @@ using UnityEngine;
 
 public class CatchingCharacter : MonoBehaviour
 {
-    public GameObject gameOverMenu;
+    //public GameObject gameOverMenu;
+    //public static bool PlayerDetected { get; set; }
+    public GameOverMenuControl gameOverMenuControl;
 
-    private void Awake()
+    private void OnCollisionEnter(Collision collision)
     {
-
+        if(collision.transform.tag == "Player")
+        {
+            gameOverMenuControl.CreateGameOverMenu();
+            Debug.Log("CharacterCaught");
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -21,5 +27,5 @@ public class CatchingCharacter : MonoBehaviour
             Instantiate(gameOverMenu);
             Time.timeScale = 0f;
         }
-    }
+    }*/
 }

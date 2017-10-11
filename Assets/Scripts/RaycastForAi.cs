@@ -1,10 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class RaycastForAi : MonoBehaviour
 {
     public Transform character;
+    private NavMeshAgent navMeshAgent;
+    private bool characterDetected;
+    private float speedAfteCharacterDetecred = 3.5f;
+
+    private void Start()
+    {
+        navMeshAgent = GetComponentInParent<NavMeshAgent>();
+    }
+
+    private void Update()
+    {
+        if(characterDetected)
+        {
+            navMeshAgent.SetDestination(character.position);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,10 +33,11 @@ public class RaycastForAi : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Transform objectHit = hit.transform;
                 if(hit.transform.tag == "Player")
                 {
-                    Debug.Log("Well done");
+                    characterDetected = true;
+                    navMeshAgent.speed = speedAfteCharacterDetecred;
+                    Debug.Log("Detected");
                 }
             }
         }
