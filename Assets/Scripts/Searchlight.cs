@@ -9,6 +9,8 @@ public class Searchlight : MonoBehaviour
     public float minRotAngle = 5;
     public float maxRotAngle = 175;
     public float rotSpeed = 0.1f;
+    public bool charDetected;
+    public Transform character;
 
     void Start ()
     {
@@ -19,14 +21,24 @@ public class Searchlight : MonoBehaviour
     {
         if(Time.timeScale != 0)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, maxRotAngle, 0), t);
-            t += rotSpeed;
-            if (t > maxT)
+            if(!charDetected)
             {
-                float temp = maxRotAngle;
-                maxRotAngle = minRotAngle;
-                minRotAngle = temp;
-                t = 0.0f;
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, maxRotAngle, 0), t);
+                t += rotSpeed;
+                if (t > maxT)
+                {
+                    float temp = maxRotAngle;
+                    maxRotAngle = minRotAngle;
+                    minRotAngle = temp;
+                    t = 0.0f;
+                }
+            }
+            else
+            {
+                Vector3 relativePos = character.position - transform.position;
+                Quaternion rotation = Quaternion.LookRotation(relativePos);
+                transform.rotation = rotation;
+                //inst.AddForce(transform.forward * bulletSpeed);
             }
         }
 	}

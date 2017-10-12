@@ -23,7 +23,7 @@ public class RaycastForAi : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")
         {
@@ -33,7 +33,7 @@ public class RaycastForAi : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if(hit.transform.tag == "Player")
+                if(hit.transform.tag == "Player" && characterDetected != true)
                 {
                     characterDetected = true;
                     navMeshAgent.speed = speedAfteCharacterDetecred;
