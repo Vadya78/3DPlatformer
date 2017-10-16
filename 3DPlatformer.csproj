@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\GameOverMenuControl.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\LightSwitcher.cs" />
+    <Compile Include="Assets\Scripts\ManagerUI.cs" />
     <Compile Include="Assets\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\Scripts\MotorAI.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />

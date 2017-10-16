@@ -6,10 +6,6 @@ public class TrackingLight : MonoBehaviour
 {
     public Transform target;
 
-	void Start () {
-		
-	}
-	
 	void Update ()
     {
         Vector3 relativePos = target.position - transform.position;

@@ -8,25 +8,28 @@ public class RaycastForTurret : MonoBehaviour
     private Searchlight searchlight;
     public GameObject bullet;
     public float bulletSpeed;
+    private int layerMask;
 
     private void Start()
     {
         searchlight = GetComponent<Searchlight>();
+
+        //Raycats all layers except 8 layer
+        layerMask = 1 << 8;
+        layerMask = ~layerMask;
     }
 
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")
         {
-            Debug.Log("ColliderEnter");
             Ray ray = new Ray(transform.position, (other.transform.position - transform.position).normalized);
             RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit))
+            if(Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
             {
                 if(hit.transform.tag == "Player" && searchlight.charDetected != true)
                 {
-                    Debug.Log("RaycastDetected");
                     searchlight.charDetected = true;
                     InvokeRepeating("CreateBullet", 1, 1);
                 }
@@ -34,12 +37,19 @@ public class RaycastForTurret : MonoBehaviour
                 {
                     if(hit.transform.tag != "Player" && searchlight.charDetected == true)
                     {
-                        Debug.Log("hit name " + hit.transform.name);
-                        searchlight.charDetected = false;
-                        CancelInvoke();
+                        StartCoroutine("StopFire");
                     }
                 }
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player" && searchlight.charDetected == true)
+        {
+            Debug.Log("Trigger out");
+            StartCoroutine("StopFire");
         }
     }
 
@@ -59,5 +69,12 @@ public class RaycastForTurret : MonoBehaviour
                 CancelInvoke();
             }
         }*/
+    }
+
+    IEnumerator StopFire()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        CancelInvoke();
+        searchlight.charDetected = false;
     }
 }
