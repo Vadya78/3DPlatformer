@@ -20,4 +20,9 @@ public class LightSwitcher : MonoBehaviour
             lampLight.gameObject.SetActive(!lampLight.gameObject.activeSelf);
         }
     }
+
+    public void CharacterDetected()
+    {
+        CancelInvoke();
+    }
 }

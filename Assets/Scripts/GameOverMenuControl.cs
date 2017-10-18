@@ -8,34 +8,36 @@ public class GameOverMenuControl : MonoBehaviour
 {
     public GameObject gameOverMenu;
 
-    public static void GamePauseStatusChange()
+    /*public static void GamePauseStatusChange()
     {
         Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-    }
+    }*/
 
-    public void ExitAplication()
+    /*public void ExitAplication()
     {
         Application.Quit();
-    }
+    }*/
 
     public void MainMenuLoad()
     {
         SceneManager.LoadScene("MainMenu");
-        GamePauseStatusChange();
+        ManagerUI.GamePauseStatusChange();
+        //GamePauseStatusChange();
     }
 
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        GamePauseStatusChange();
+        ManagerUI.GamePauseStatusChange();
+        //GamePauseStatusChange();
     }
 
-    public void CreateGameOverMenu()
+    /*public void CreateGameOverMenu()
     {
         Toggle pauseMenu = (Toggle)FindObjectOfType(typeof(Toggle));
         pauseMenu.interactable = false;
         Instantiate(gameOverMenu);
         GamePauseStatusChange();
-    }
+    }*/
 
 }

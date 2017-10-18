@@ -51,7 +51,7 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
-#if !MOBILE_INPUT
+/*#if !MOBILE_INPUT
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -60,5 +60,5 @@ public class PauseMenu : MonoBehaviour
             Cursor.visible = m_MenuToggle.isOn;
         }
     }
-#endif
+#endif*/
 }

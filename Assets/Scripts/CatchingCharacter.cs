@@ -7,13 +7,13 @@ public class CatchingCharacter : MonoBehaviour
 {
     //public GameObject gameOverMenu;
     //public static bool PlayerDetected { get; set; }
-    public GameOverMenuControl gameOverMenuControl;
+    public ManagerUI managerUI;
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Player")
         {
-            gameOverMenuControl.CreateGameOverMenu();
+            managerUI.CreateGameOverMenu();
             Debug.Log("CharacterCaught");
         }
     }

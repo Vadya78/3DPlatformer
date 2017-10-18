@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\NavigationAI.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\RaycastForAi.cs" />
+    <Compile Include="Assets\Scripts\RaycastForLamp.cs" />
     <Compile Include="Assets\Scripts\RaycastForTurret.cs" />
     <Compile Include="Assets\Scripts\Searchlight.cs" />
     <Compile Include="Assets\Scripts\TestAnimation.cs" />
