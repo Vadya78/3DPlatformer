@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Prototype Materials\ShowcaseMovement.cs" />
+    <Compile Include="Assets\Scripts\ActivationLoader.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\CatchingCharacter.cs" />
     <Compile Include="Assets\Scripts\CharacterRotation.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Assets\Scripts\RaycastForAi.cs" />
     <Compile Include="Assets\Scripts\RaycastForLamp.cs" />
     <Compile Include="Assets\Scripts\RaycastForTurret.cs" />
+    <Compile Include="Assets\Scripts\SaveManager.cs" />
     <Compile Include="Assets\Scripts\Searchlight.cs" />
     <Compile Include="Assets\Scripts\TestAnimation.cs" />
     <Compile Include="Assets\Scripts\Token.cs" />

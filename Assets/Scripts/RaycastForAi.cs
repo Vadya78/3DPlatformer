@@ -17,7 +17,7 @@ public class RaycastForAi : MonoBehaviour
 
     private void Update()
     {
-        if(characterDetected)
+        if(characterDetected || PlayerPrefs.GetInt("Player Detected") == 1)
         {
             navMeshAgent.SetDestination(character.position);
         }

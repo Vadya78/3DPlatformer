@@ -29,6 +29,7 @@ public class RaycastForLamp : MonoBehaviour
                     Debug.Log("Detected");
                     alarm.Play();
                     lightSwitcher.CharacterDetected();
+                    PlayerPrefs.SetInt("Player Detected", 1);
                     charDetected = true;
                 }
             }
